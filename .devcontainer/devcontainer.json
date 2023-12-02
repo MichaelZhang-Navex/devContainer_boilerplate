@@ -11,6 +11,7 @@
 	},
 	"postCreateCommand": {
 		"zsh": ["chsh", "-s", "/usr/bin/zsh"],
+		"zshrc": ["cp", "${containerWorkspaceFolder}/.zshrc", "/root/"],
 		"nix": ["nix-env","-if","${containerWorkspaceFolder}/init.nix"],
 		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/requirements.txt"],
 		"github_email": ["git", "config", "--global", "user.email", "\"michael.zhang@navex.com\""],
