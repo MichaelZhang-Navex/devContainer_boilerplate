@@ -1,0 +1,38 @@
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	// "build": {
+	// 	"dockerfile": "Dockerfile"
+	// },
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/rocker-org/devcontainer-features/miniforge:1": {},
+		"ghcr.io/devcontainers/features/nix:1": {}
+	},
+	"postCreateCommand": {
+		"zsh": ["chsh", "-s", "/usr/bin/zsh"],
+		"nix": ["nix-env","-if","/workspaces/navexDbt/init.nix"],
+		"pip": ["pip", "install", "-r", "/workspaces/navexDbt/requirements.txt"],
+		"github_email": ["git", "config", "--global", "user.email", "\"michael.zhang@navex.com\""],
+		"github_user": ["git", "config", "--global", "user.name", "\"Michael Zhang\""]
+	},
+	"remoteUser": "root",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-azuretools.vscode-docker",
+				"oderwat.indent-rainbow",
+				"tal7aouy.rainbow-bracket",
+				"eamodio.gitlens",
+				"innoverio.vscode-dbt-power-user",
+				"bastienboutonnet.vscode-dbt",
+				"henriblancke.vscode-dbt-formatter",
+				"ms-python.black-formatter",
+				"ms-toolsai.jupyter"
+			]
+		}
+	}
+}
+
