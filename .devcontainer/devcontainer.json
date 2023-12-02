@@ -11,8 +11,8 @@
 	},
 	"postCreateCommand": {
 		"zsh": ["chsh", "-s", "/usr/bin/zsh"],
-		"nix": ["nix-env","-if","/workspaces/navexDbt/init.nix"],
-		"pip": ["pip", "install", "-r", "/workspaces/navexDbt/requirements.txt"],
+		"nix": ["nix-env","-if","${containerWorkspaceFolder}/init.nix"],
+		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/requirements.txt"],
 		"github_email": ["git", "config", "--global", "user.email", "\"michael.zhang@navex.com\""],
 		"github_user": ["git", "config", "--global", "user.name", "\"Michael Zhang\""]
 	},
