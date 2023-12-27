@@ -31,7 +31,8 @@
 				"bastienboutonnet.vscode-dbt",
 				"henriblancke.vscode-dbt-formatter",
 				"ms-python.black-formatter",
-				"ms-toolsai.jupyter"
+				"ms-toolsai.jupyter",
+				"sourcegraph.cody-ai"
 			]
 		}
 	}
