@@ -10,8 +10,9 @@
 		"ghcr.io/devcontainers/features/nix:1": {}
 	},
 	"postCreateCommand": {
-		"zsh": ["chsh", "-s", "/usr/bin/zsh"],
 		"zshrc": ["cp", "${containerWorkspaceFolder}/.zshrc", "/root/"],
+		"installomz": ["sh", "-c", "\"$(curl", "-fsSL", "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"", "\"\"", "--unattended", "--keep-zshrc"],	
+		"chzsh": ["chsh", "-s", "/usr/bin/zsh"],
 		"nix": ["nix-env","-if","${containerWorkspaceFolder}/init.nix"],
 		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/requirements.txt"],
 		"github_email": ["git", "config", "--global", "user.email", "\"michael.zhang@navex.com\""],
