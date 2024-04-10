@@ -11,7 +11,7 @@
 	},
 	"postCreateCommand": {
 		"zshrc": ["cp", "${containerWorkspaceFolder}/.zshrc", "/root/"],
-		"installomz": ["sh", "-c", "\"$(curl", "-fsSL", "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"", "\"\"", "--unattended", "--keep-zshrc"],	
+		// "installomz": ["sh", "-c", "\"$(curl", "-fsSL", "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"", "\"\"", "--unattended", "--keep-zshrc"],	
 		"chzsh": ["chsh", "-s", "/usr/bin/zsh"],
 		"nix": ["nix-env","-if","${containerWorkspaceFolder}/init.nix"],
 		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/requirements.txt"],
