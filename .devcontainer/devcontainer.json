@@ -1,26 +1,23 @@
 {
 	"name": "Ubuntu",
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	// "build": {
-	// 	"dockerfile": "Dockerfile"
-	// },
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-		"ghcr.io/rocker-org/devcontainer-features/miniforge:1": {},
 		"ghcr.io/devcontainers/features/nix:1": {}
 	},
 	"postCreateCommand": {
-		"zshrc": ["cp", "${containerWorkspaceFolder}/.zshrc", "/root/"],
-		// "installomz": ["sh", "-c", "\"$(curl", "-fsSL", "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"", "\"\"", "--unattended", "--keep-zshrc"],	
-		"chzsh": ["chsh", "-s", "/usr/bin/zsh"],
-		"nix": ["nix-env","-if","${containerWorkspaceFolder}/init.nix"],
-		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/requirements.txt"],
+		"zshrc": ["cp", "${containerWorkspaceFolder}/.devcontainer/.zshrc", "/root/"],
+		"nix": ["nix-env","-if","${containerWorkspaceFolder}/.devcontainer/init.nix"],
+		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/.devcontainer/requirements.txt"],
 		"github_email": ["git", "config", "--global", "user.email", "\"michael.zhang@navex.com\""],
 		"github_user": ["git", "config", "--global", "user.name", "\"Michael Zhang\""]
 	},
 	"remoteUser": "root",
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			},
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
@@ -33,7 +30,9 @@
 				"henriblancke.vscode-dbt-formatter",
 				"ms-python.black-formatter",
 				"ms-toolsai.jupyter",
-				"sourcegraph.cody-ai"
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"mkhl.direnv"
 			]
 		}
 	}

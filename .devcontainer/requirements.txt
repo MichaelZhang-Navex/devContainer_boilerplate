@@ -1,0 +1,8 @@
+jupyterlab
+ipykernel
+ipython
+pandas
+pyarrow
+openpyxl
+cfn-lint
+dbt-snowflake
