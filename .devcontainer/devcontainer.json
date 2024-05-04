@@ -16,7 +16,16 @@
 	"customizations": {
 		"vscode": {
 			"settings": {
-				"terminal.integrated.defaultProfile.linux": "zsh"
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter"
+				},
+				"files.associations": {
+					"*.sql": "jinja-sql"
+				},
+				"terminal.integrated.fontFamily": "'FantasqueSansM Nerd Font',Menlo, Monaco, 'Courier New', monospace",
+				"terminal.integrated.fontSize": 16,
+				"workbench.colorTheme": "Ayu Mirage Bordered"
 			},
 			"extensions": [
 				"ms-python.python",
@@ -32,7 +41,8 @@
 				"ms-toolsai.jupyter",
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
-				"mkhl.direnv"
+				"mkhl.direnv",
+				"teabyii.ayu"
 			]
 		}
 	}
