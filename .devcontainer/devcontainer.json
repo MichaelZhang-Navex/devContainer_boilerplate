@@ -42,7 +42,8 @@
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
 				"mkhl.direnv",
-				"teabyii.ayu"
+				"teabyii.ayu",
+				"TomRijndorp.find-it-faster"
 			]
 		}
 	}
