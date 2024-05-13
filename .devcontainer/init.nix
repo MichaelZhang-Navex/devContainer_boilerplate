@@ -10,5 +10,8 @@
     yarn
     aws-sam-cli
     awscli2
+    fzf
+    bat
+    ripgrep
 ;
 }
