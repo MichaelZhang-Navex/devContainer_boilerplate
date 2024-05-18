@@ -5,4 +5,6 @@ pandas
 pyarrow
 openpyxl
 cfn-lint
+black
+isort
 dbt-snowflake
