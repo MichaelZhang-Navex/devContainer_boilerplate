@@ -8,3 +8,4 @@ cfn-lint
 black
 isort
 dbt-snowflake
+snowflake-snowpark-python
