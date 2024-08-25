@@ -9,8 +9,8 @@
 		"zshrc": ["cp", "${containerWorkspaceFolder}/.devcontainer/.zshrc", "/root/"],
 		"nix": ["nix-env","-if","${containerWorkspaceFolder}/.devcontainer/init.nix"],
 		"pip": ["pip", "install", "-r", "${containerWorkspaceFolder}/.devcontainer/requirements.txt"],
-		"github_email": ["git", "config", "--global", "user.email", "\"michael.zhang@navex.com\""],
-		"github_user": ["git", "config", "--global", "user.name", "\"Michael Zhang\""]
+		"github_email": ["git", "config", "--global", "user.email", "\"\""],
+		"github_user": ["git", "config", "--global", "user.name", "\"\""]
 	},
 	"remoteUser": "root",
 	"customizations": {
