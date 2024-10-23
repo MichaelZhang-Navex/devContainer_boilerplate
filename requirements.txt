@@ -1,0 +1,13 @@
+jupyterlab
+ipykernel
+ipython
+pandas
+pyarrow
+openpyxl
+dbt-snowflake
+shandy-sqlfmt[jinjafmt]
+nox
+pytest
+snowflake-snowpark-python[pandas]
+boto3
+pytest-env
