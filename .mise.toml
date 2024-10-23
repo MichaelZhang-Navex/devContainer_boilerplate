@@ -1,0 +1,44 @@
+
+[env]
+_.python.venv = { path = '.venv', create = true }
+DBT_ACCOUNT_NAME = "NAVEX-SANDBOX"
+DBT_ENV_NAME = "QA"
+DBT_ENV_SECRET_SNOWFLAKE_PASSWORD = "IKYSjM;4NCI19!G.dO\\J"
+DBT_PROJECT_NAME = "navex_sandbox_qa"
+
+SNOWFLAKE_ACCOUNT = "NAVEX-SANDBOX"
+SNOWFLAKE_USERNAME="QA_DBT_USER"
+SnowFlakeDbtPasswordSsmArn="arn:aws:ssm:us-west-2:552242929734:parameter/nca/hardcoded-dev-parameters/snowflake-db-password"
+
+[tools]
+python = "3.11"
+
+# MARK: install python packages
+[tasks.pip]
+run  = ['pip install -r requirements.txt']
+
+# MARK: vscode extensions
+[tasks.ext]
+run = """
+while read extension; do 
+code --install-extension $extension; 
+done < vscode_extensions.txt
+"""
+
+[tasks.unext]
+run = """
+for ext in $(code --list-extensions); do
+    code --uninstall-extension "$ext"
+done
+"""
+
+# MARK: pytest 
+[tasks.test]
+run = """
+pytest
+"""
+    
+[tasks.collect]
+run = """
+pytest --collect-only
+"""
